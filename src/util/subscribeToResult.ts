@@ -74,6 +74,6 @@ export function subscribeToResult<T>(outerSubscriber: OuterSubscriber<any, any>,
       return obs.subscribe(new InnerSubscriber(outerSubscriber, outerValue, outerIndex));
     }
   } else {
-    destination.error(new TypeError('unknown type returned'));
+    destination.error(new TypeError("rxjs doesn't know how to subscribe to: " + result));
   }
 }
